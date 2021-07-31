@@ -1,26 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//components
+import { RatingPage } from './pages/RatingPage';
+import { SettingsPage } from './pages/SettingsPage';
+import { NavBar } from './components/NavBar';
+
+//styles
+import { GlobalStyle } from './styles/GlobalStyle';
+
+
+
+// const first = "#283046";
+// const second = "#161D31";
+// const text = "#D0D2D6";
+
+
+export const App = () => {
+	return (
+		<StyledApp>
+			<GlobalStyle/>
+			<NavBar/>
+			<Switch>
+			<Route exact path="/">
+				<RatingPage/>
+			</Route>
+			<Route exact path="/settings">
+				<SettingsPage/>
+			</Route>
+			<Route path="/">
+				<h1>ERROR 404</h1>
+			</Route>
+			</Switch>
+		</StyledApp>
+	)
 }
 
-export default App;
+const StyledApp = styled.div`
+	width: 80%;
+	margin: auto;
+
+	@media (max-width: 1024px) {
+		width: 90%;
+	}
+
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+`;
