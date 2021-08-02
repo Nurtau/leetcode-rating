@@ -26,10 +26,10 @@ const StyledRing = styled.div`
     width: 40px;
     height: 40px;
     margin: 8px;
-    border: 4px solid #EEEEEE;
+    border: 4px solid #eeeeee;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #EEEEEE transparent transparent transparent;
+    border-color: #eeeeee transparent transparent transparent;
   }
   div:nth-child(1) {
     animation-delay: -0.45s;

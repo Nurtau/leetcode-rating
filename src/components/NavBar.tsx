@@ -35,8 +35,8 @@ const StyledNav = styled.nav`
 
 const RightMenu = styled.div`
   display: flex;
-	a {
-		display: block;
-		margin-bottom: 5px;
-	}
+  a {
+    display: block;
+    margin-bottom: 5px;
+  }
 `;

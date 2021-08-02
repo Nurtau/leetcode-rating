@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
 
@@ -10,18 +10,22 @@ import { NavBar } from "./components/NavBar";
 //styles
 import { GlobalStyle } from "./styles/GlobalStyle";
 
-// const first = "#283046";
-// const second = "#161D31";
-// const text = "#D0D2D6";
+//interfacess
+import { UserInfo } from "./components/RatingList";
 
 export const App = () => {
+  const [usersRating, setUsersRating] = useState<UserInfo[]>([]);
+
   return (
     <StyledApp>
       <GlobalStyle />
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <RatingPage />
+          <RatingPage
+            usersRating={usersRating}
+            setUsersRating={setUsersRating}
+          />
         </Route>
         <Route exact path="/settings">
           <SettingsPage />
