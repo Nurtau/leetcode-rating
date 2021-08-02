@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const textFontSize = "24px";
+const bigTextFontSize = "27px";
 
 export const GlobalStyle = createGlobalStyle`
 	* {
@@ -13,15 +14,18 @@ export const GlobalStyle = createGlobalStyle`
 		min-height: 100vh;
 		background-color: #222831;
 		color: #EEEEEE;
-		font-size: ${textFontSize};
+		font-size: ${bigTextFontSize};
 		/* color: #FFD369; */
 		/* color: #393E46; */
+		@media (max-width: 1024px) {
+			font-size: ${textFontSize};
+		}
 	}
 
 	a {
 		color: #EEEEEE;
 		text-decoration: none;
-		font-size: ${textFontSize};
+		font-size: ${bigTextFontSize};
 		margin-right: 1.7rem;
 		@media (max-width: 1024px) {
 			font-size: ${textFontSize};

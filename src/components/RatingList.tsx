@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { Loading } from "./Loading";
 import { RatingUser } from "./RatingUser";
+import { ratingListFade } from "../animations";
 
 export interface UserInfo {
   username: string;
@@ -22,8 +24,7 @@ export const RatingList = () => {
         );
         setIsLoading(false);
         setUsersRating(data);
-      } catch (error) {
-      }
+      } catch (error) {}
     };
     fetchData();
   });
@@ -38,7 +39,7 @@ export const RatingList = () => {
               username={username}
               score={score}
               link={link}
-							id={id}
+              id={id}
             />
           </div>
         );
@@ -46,19 +47,26 @@ export const RatingList = () => {
     );
 
   return (
-    <StyledList>
-      {isLoading ? <LoadingWrapper><Loading /></LoadingWrapper> : renderList()}
+    <StyledList> 
+      {isLoading ? (
+        <LoadingContainer>
+          <Loading />
+        </LoadingContainer>
+      ) : (
+        <motion.div variants={ratingListFade} animate="show" initial="hidden">
+          {renderList()}
+        </motion.div>
+      )}
     </StyledList>
   );
 };
 
-
-const LoadingWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	margin-top: 2rem;
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 `;
 
 const StyledList = styled.div`
-	padding: 1.2rem;
+  padding: 1.2rem;
 `;
