@@ -1,3 +1,8 @@
+const transition = {
+  duration: 1,
+  ease: "easeOut",
+};
+
 export const ratingListFade = {
   hidden: {
     opacity: 0,
@@ -6,9 +11,19 @@ export const ratingListFade = {
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 1,
-      ease: "easeOut",
-    },
+    transition: transition,
   },
+};
+
+export const getNavLineAnimation = (isActive: boolean) => {
+  return {
+    hidden: {
+      width: "0%",
+      transition: transition,
+    },
+    show: {
+      width: isActive ? "70%" : "0%",
+      transition: transition,
+    },
+  };
 };
