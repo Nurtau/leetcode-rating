@@ -2,6 +2,17 @@ const transition = {
   duration: 1,
   ease: "easeOut",
 };
+//Rating
+
+export const ratingPageFade = {
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export const ratingListFade = {
   hidden: {
@@ -14,7 +25,7 @@ export const ratingListFade = {
     transition: transition,
   },
 };
-
+//Nav
 export const getNavLineAnimation = (isActive: boolean) => {
   return {
     hidden: {

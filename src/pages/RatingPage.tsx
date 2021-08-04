@@ -1,7 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { RatingList } from "../components/RatingList";
 
 import { UserInfo } from "../components/RatingList";
+
+import { ratingPageFade } from "../animations";
 
 export interface RatingPageProps {
   usersRating: UserInfo[];
@@ -13,8 +16,8 @@ export const RatingPage: React.FC<RatingPageProps> = ({
   setUsersRating,
 }) => {
   return (
-    <div>
+    <motion.div variants={ratingPageFade} exit="exit">
       <RatingList usersRating={usersRating} setUsersRating={setUsersRating} />
-    </div>
+    </motion.div>
   );
 };
