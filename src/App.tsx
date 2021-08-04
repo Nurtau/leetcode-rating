@@ -45,12 +45,13 @@ export const App = () => {
 const StyledApp = styled.div`
   width: 80%;
   margin: auto;
+	overflow: hidden;
 
   @media (max-width: 1024px) {
     width: 90%;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 95%;
   }
 `;
