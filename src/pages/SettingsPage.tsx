@@ -63,9 +63,6 @@ export const SettingsPage = () => {
 };
 
 const StyledSettingsPage = styled(motion.div)`
-  /* width: 95%; */
-  margin: auto;
-	height: 100%;
 `;
 
 const SettingsContainer = styled.div`
@@ -79,7 +76,6 @@ const DescriptionContainer = styled.div`
 
 const UtilsContainer = styled.div`
 	padding: 1rem 1rem 0 1rem;
-  height: 100%;
 	box-shadow: 2px 2px 10px rgba(41, 31, 39, 0.8);
 `;
 

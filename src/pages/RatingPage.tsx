@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 import { RatingList } from "../components/RatingList";
 
@@ -16,8 +17,12 @@ export const RatingPage: React.FC<RatingPageProps> = ({
   setUsersRating,
 }) => {
   return (
-    <motion.div variants={pageFade} exit="exit">
+    <StyledRatingPage variants={pageFade} exit="exit">
       <RatingList usersRating={usersRating} setUsersRating={setUsersRating} />
-    </motion.div>
+    </StyledRatingPage>
   );
 };
+
+const StyledRatingPage = styled(motion.div)`
+	flex-grow: 1;
+`;
