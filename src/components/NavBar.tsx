@@ -54,13 +54,15 @@ const RightMenu = styled.div`
   display: flex;
   a {
     display: block;
+		margin: 0;
     margin-bottom: 5px;
   }
+
 	& > div {
-		margin-left: 1rem;
+		margin-left: 2.5rem;
 
 		@media (max-width: 768px) {
-			margin-left: 0rem;
+			margin-left: 1.1rem;
 		}
 
 	}

@@ -45,7 +45,7 @@ export const getNavLineAnimation = (isActive: boolean) => {
       transition: transition,
     },
     show: {
-      width: isActive ? "70%" : "0%",
+      width: isActive ? "100%" : "0%",
       transition: transition,
     },
   };
