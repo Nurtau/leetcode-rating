@@ -11,7 +11,7 @@ import { NavBar } from "./components/NavBar";
 //styles
 import { GlobalStyle } from "./styles/GlobalStyle";
 
-//interfacess
+//interfaces
 import { UserInfo } from "./components/RatingList";
 
 export const App = () => {
@@ -46,11 +46,14 @@ export const App = () => {
 
 const AppContainer = styled.div`
 	width: 100%;
-	overflow: hidden;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 `;
 
 const StyledApp = styled.div`
-  width: 95%;
+  width: 100%;
   margin: auto;
   overflow: hidden;
+	flex: 1;
 `;

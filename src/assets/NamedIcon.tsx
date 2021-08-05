@@ -21,6 +21,10 @@ const IconContainer = styled.div`
 	p {
 		margin-left: 1rem;
 	}
+	font-size: 20px;
+	@media (max-width: 1024px) {
+		font-size: 18px;
+	}
 	@media (max-width: 768px) {
 		p {
 			display: none;

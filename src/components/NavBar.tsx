@@ -29,21 +29,20 @@ export const NavBar = () => {
   );
 };
 const NavContainer = styled.div`
-  width: 150vw;
+  width: 100%;
 	background-color: #29334183;
 	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-	transform: translateX(-25vw);
 
 `;
 
 const StyledNav = styled.nav`
-  padding: 1.2rem;
+  padding: 1.1rem 1.2rem;
   display: flex;
   justify-content: space-between;
-  width: 95vw;
+  width: 95%;
   margin: auto;
 	@media (max-width: 1024px) {
-		padding: 1rem 1.2rem;
+		padding: 0.9rem 1.2rem;
 	}
 	@media (max-width: 768px) {
 		padding: 0.8rem 1.2rem;

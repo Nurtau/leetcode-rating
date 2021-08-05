@@ -12,15 +12,15 @@ export const SettingsPage = () => {
       initial="hidden"
       exit="exit"
     >
-      <div>
-        <div>
+      <SettingsContainer>
+        <UtilsContainer>
           <UtilContainer>
             <NamedIcon description="Add User">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
+                width="27"
+                height="27"
+                viewBox="0 0 27 27"
                 fill="#EEEEEE"
               >
                 <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
@@ -31,23 +31,23 @@ export const SettingsPage = () => {
             <NamedIcon description="Update Scores">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="#EEEEEE"
+                width="27"
+                height="27"
+                viewBox="0 0 27 27"
+								fill="#EEEEEE"
               >
-                <path d="M9 12l-4.463 4.969-4.537-4.969h3c0-4.97 4.03-9 9-9 2.395 0 4.565.942 6.179 2.468l-2.004 2.231c-1.081-1.05-2.553-1.699-4.175-1.699-3.309 0-6 2.691-6 6h3zm10.463-4.969l-4.463 4.969h3c0 3.309-2.691 6-6 6-1.623 0-3.094-.65-4.175-1.699l-2.004 2.231c1.613 1.526 3.784 2.468 6.179 2.468 4.97 0 9-4.03 9-9h3l-4.537-4.969z" />
+                <path d="M13.5 2c-5.629 0-10.212 4.436-10.475 10h-3.025l4.537 5.917 4.463-5.917h-2.975c.26-3.902 3.508-7 7.475-7 4.136 0 7.5 3.364 7.5 7.5s-3.364 7.5-7.5 7.5c-2.381 0-4.502-1.119-5.876-2.854l-1.847 2.449c1.919 2.088 4.664 3.405 7.723 3.405 5.798 0 10.5-4.702 10.5-10.5s-4.702-10.5-10.5-10.5z" />
               </svg>
             </NamedIcon>
           </UtilContainer>
           <UtilContainer>
             <NamedIcon description="Reset Scores">
               <svg
-                width="30"
-                height="30"
-								viewBox="0 0 30 30"
+                width="27"
+                height="27"
+                viewBox="0 0 27 27"
                 xmlns="http://www.w3.org/2000/svg"
-								fill-rule="evenodd"
+                fill-rule="evenodd"
                 clip-rule="evenodd"
                 fill="#EEEEEE"
               >
@@ -55,17 +55,36 @@ export const SettingsPage = () => {
               </svg>
             </NamedIcon>
           </UtilContainer>
-        </div>
-        <div></div>
-      </div>
+        </UtilsContainer>
+        <DescriptionContainer></DescriptionContainer>
+      </SettingsContainer>
     </StyledSettingsPage>
   );
 };
 
 const StyledSettingsPage = styled(motion.div)`
-  margin-top: 1rem;
+  /* width: 95%; */
+  margin: auto;
+	height: 100%;
+`;
+
+const SettingsContainer = styled.div`
+  display: flex;
+	height: 100%;
+`;
+
+const DescriptionContainer = styled.div`
+  flex: 1;
+`;
+
+const UtilsContainer = styled.div`
+	padding: 1rem 1rem 0 1rem;
+  height: 100%;
+	box-shadow: 2px 2px 10px rgba(41, 31, 39, 0.8);
 `;
 
 const UtilContainer = styled.div`
-  padding: 1.25rem 1.2rem;
+  padding: 1.5rem 1.6rem;
+  border-left: 0;
+  border-top: 0;
 `;

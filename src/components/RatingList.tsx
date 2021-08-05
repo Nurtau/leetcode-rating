@@ -75,9 +75,9 @@ const StyledList = styled.div`
   padding: 1.2rem;
 	margin: auto;
   overflow: hidden;
-	width: 80%;
+	width: 75%;
   @media (max-width: 1024px) {
-    width: 90%;
+    width: 85%;
   }
 
   @media (max-width: 768px) {

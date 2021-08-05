@@ -1,8 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
-const textFontSize = "24px";
-const mediumTextFontSize = "25.5px";
-const bigTextFontSize = "27px";
+const textFontSize = "25px";
+const mediumTextFontSize = "27px";
+const bigTextFontSize = "28px";
 
 export const GlobalStyle = createGlobalStyle`
 	* {
