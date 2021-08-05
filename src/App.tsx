@@ -19,7 +19,7 @@ export const App = () => {
   const location = useLocation();
 
   return (
-    <div>
+    <AppContainer>
       <GlobalStyle />
       <NavBar />
       <StyledApp>
@@ -40,9 +40,14 @@ export const App = () => {
           </Switch>
         </AnimatePresence>
       </StyledApp>
-    </div>
+    </AppContainer>
   );
 };
+
+const AppContainer = styled.div`
+	width: 100%;
+	overflow: hidden;
+`;
 
 const StyledApp = styled.div`
   width: 95%;

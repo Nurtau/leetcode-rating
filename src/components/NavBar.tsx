@@ -29,16 +29,18 @@ export const NavBar = () => {
   );
 };
 const NavContainer = styled.div`
-  width: 100%;
+  width: 150vw;
 	background-color: #29334183;
 	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+	transform: translateX(-25vw);
+
 `;
 
 const StyledNav = styled.nav`
   padding: 1.2rem;
   display: flex;
   justify-content: space-between;
-  width: 95%;
+  width: 95vw;
   margin: auto;
 	@media (max-width: 1024px) {
 		padding: 1rem 1.2rem;
