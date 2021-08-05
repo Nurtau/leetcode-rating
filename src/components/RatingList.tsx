@@ -73,4 +73,14 @@ const LoadingContainer = styled.div`
 
 const StyledList = styled.div`
   padding: 1.2rem;
+	margin: auto;
+  overflow: hidden;
+	width: 80%;
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
 `;

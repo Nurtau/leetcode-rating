@@ -67,5 +67,5 @@ const StyledSettingsPage = styled(motion.div)`
 `;
 
 const UtilContainer = styled.div`
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 1.2rem;
 `;

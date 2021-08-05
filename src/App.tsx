@@ -19,39 +19,33 @@ export const App = () => {
   const location = useLocation();
 
   return (
-    <StyledApp>
+    <div>
       <GlobalStyle />
       <NavBar />
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route exact path="/">
-            <RatingPage
-              usersRating={usersRating}
-              setUsersRating={setUsersRating}
-            />
-          </Route>
-          <Route exact path="/settings">
-            <SettingsPage />
-          </Route>
-          <Route path="/">
-            <h1>ERROR 404</h1>
-          </Route>
-        </Switch>
-      </AnimatePresence>
-    </StyledApp>
+      <StyledApp>
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route exact path="/">
+              <RatingPage
+                usersRating={usersRating}
+                setUsersRating={setUsersRating}
+              />
+            </Route>
+            <Route exact path="/settings">
+              <SettingsPage />
+            </Route>
+            <Route path="/">
+              <h1>ERROR 404</h1>
+            </Route>
+          </Switch>
+        </AnimatePresence>
+      </StyledApp>
+    </div>
   );
 };
 
 const StyledApp = styled.div`
-  width: 80%;
+  width: 95%;
   margin: auto;
-	overflow: hidden;
-
-  @media (max-width: 1024px) {
-    width: 90%;
-  }
-
-  @media (max-width: 768px) {
-    width: 95%;
-  }
+  overflow: hidden;
 `;
