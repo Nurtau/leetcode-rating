@@ -35,11 +35,17 @@ const NavContainer = styled.div`
 `;
 
 const StyledNav = styled.nav`
-  padding: 1.3rem 1.2rem;
+  padding: 1.2rem;
   display: flex;
   justify-content: space-between;
   width: 95%;
   margin: auto;
+	@media (max-width: 1024px) {
+		padding: 1rem 1.2rem;
+	}
+	@media (max-width: 768px) {
+		padding: 0.8rem 1.2rem;
+	}
 
 `;
 
