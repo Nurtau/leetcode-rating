@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { NamedIcon } from "../assets/NamedIcon";
 import { pageFade } from "../animations";
 
+export enum UtilTypes {
+  AddUser,
+  UpdateScores,
+  ResetScores,
+}
+
 export const SettingsPage = () => {
+  const [activeUtil, setActiveUtil] = useState<UtilTypes>(UtilTypes.AddUser);
+
   return (
     <StyledSettingsPage
       variants={pageFade}
@@ -14,8 +22,8 @@ export const SettingsPage = () => {
     >
       <SettingsContainer>
         <UtilsContainer>
-          <UtilContainer>
-            <NamedIcon description="Add User">
+          <UtilContainer onClick={() => setActiveUtil(UtilTypes.AddUser)}>
+            <NamedIcon description="Add User" isActive={activeUtil === UtilTypes.AddUser}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="27"
@@ -27,21 +35,21 @@ export const SettingsPage = () => {
               </svg>
             </NamedIcon>
           </UtilContainer>
-          <UtilContainer>
-            <NamedIcon description="Update Scores">
+          <UtilContainer onClick={() => setActiveUtil(UtilTypes.UpdateScores)}>
+            <NamedIcon description="Update Scores" isActive={activeUtil === UtilTypes.UpdateScores}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="27"
                 height="27"
                 viewBox="0 0 27 27"
-								fill="#EEEEEE"
+                fill="#EEEEEE"
               >
                 <path d="M13.5 2c-5.629 0-10.212 4.436-10.475 10h-3.025l4.537 5.917 4.463-5.917h-2.975c.26-3.902 3.508-7 7.475-7 4.136 0 7.5 3.364 7.5 7.5s-3.364 7.5-7.5 7.5c-2.381 0-4.502-1.119-5.876-2.854l-1.847 2.449c1.919 2.088 4.664 3.405 7.723 3.405 5.798 0 10.5-4.702 10.5-10.5s-4.702-10.5-10.5-10.5z" />
               </svg>
             </NamedIcon>
           </UtilContainer>
-          <UtilContainer>
-            <NamedIcon description="Reset Scores">
+          <UtilContainer onClick={() => setActiveUtil(UtilTypes.ResetScores)}>
+            <NamedIcon description="Reset Scores" isActive={activeUtil === UtilTypes.ResetScores}>
               <svg
                 width="27"
                 height="27"
@@ -62,12 +70,11 @@ export const SettingsPage = () => {
   );
 };
 
-const StyledSettingsPage = styled(motion.div)`
-`;
+const StyledSettingsPage = styled(motion.div)``;
 
 const SettingsContainer = styled.div`
   display: flex;
-	height: 100%;
+  height: 100%;
 `;
 
 const DescriptionContainer = styled.div`
@@ -75,12 +82,13 @@ const DescriptionContainer = styled.div`
 `;
 
 const UtilsContainer = styled.div`
-	padding: 1rem 1rem 0 1rem;
-	box-shadow: 2px 2px 10px rgba(41, 31, 39, 0.8);
+  padding: 1rem 1rem 0 1rem;
+  box-shadow: 2px 2px 10px rgba(41, 31, 39, 0.8);
 `;
 
 const UtilContainer = styled.div`
   padding: 1.5rem 1.6rem;
   border-left: 0;
   border-top: 0;
+	cursor: pointer;
 `;
