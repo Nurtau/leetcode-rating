@@ -91,4 +91,7 @@ const UtilContainer = styled.div`
   border-left: 0;
   border-top: 0;
 	cursor: pointer;
+	@media (max-width: 768px) {
+		padding: 1.5rem 0.8rem;
+	}
 `;

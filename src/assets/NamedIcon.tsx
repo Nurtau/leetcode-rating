@@ -22,15 +22,23 @@ export const NamedIcon: React.FC<NamedIconProps> = ({
 const IconContainer = styled.div<{ active: boolean }>`
   display: flex;
   align-items: center;
+  font-size: 20px;
   p {
     margin-left: 1rem;
     color: ${(props) => (props.active ? "inherit" : "#eeeeee65")};
   }
-
   svg {
     fill: ${(props) => (props.active ? "#EEEEEE" : "#eeeeee65")};
   }
-  font-size: 20px;
+
+  &:hover {
+    p {
+      color: ${(props) => (props.active ? "inherit" : "#eeeeeecc")};
+    }
+    svg {
+      fill: ${(props) => (props.active ? "#EEEEEE" : "#eeeeeecc")};
+    }
+  }
   @media (max-width: 1024px) {
     font-size: 18px;
   }
