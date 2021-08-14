@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledInput = styled.input`
 	font-size: 18px;
-	border: 0;
+	border: none;
 	background: 0;
+	border-radius: 0;
 	border-bottom: 1px solid #EEEEEE;
 	color: #eeeeeea5;
 	width: 300px;
