@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Loading = () => {
+interface LoadingProps {
+  height: number;
+}
+
+export const Loading: React.FC<LoadingProps> = ({ height }) => {
   return (
-    <StyledRing>
+    <StyledRing height={height}>
       <div></div>
       <div></div>
       <div></div>
@@ -12,21 +16,21 @@ export const Loading = () => {
   );
 };
 
-const StyledRing = styled.div`
+const StyledRing = styled.div<LoadingProps>`
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: ${props => `${props.height}px`};
+  height: ${props => `${props.height}px`};;
   animation-delay: -0.45s;
 
   div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 40px;
-    height: 40px;
-    margin: 8px;
-    border: 4px solid #eeeeee;
+    width: ${props => `${props.height / 2}px`};
+    height: ${props => `${props.height / 2}px`};
+    margin: ${props => `${props.height / 10}px`};
+    border: ${props => `${props.height / 20}px  solid #eeeeee`};
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #eeeeee transparent transparent transparent;

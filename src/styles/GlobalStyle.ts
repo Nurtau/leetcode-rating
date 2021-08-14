@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
+		font-family: 'Raleway', sans-serif;
 	}
 	
 	body {
@@ -24,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	a {
+	a, label {
 		color: #EEEEEE;
 		text-decoration: none;
 		font-size: ${bigTextFontSize};

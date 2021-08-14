@@ -54,7 +54,7 @@ export const RatingList: React.FC<RatingListProps> = ({
     <StyledList>
       {isLoading ? (
         <LoadingContainer>
-          <Loading />
+          <Loading height={80}/>
         </LoadingContainer>
       ) : (
         <motion.div variants={ratingListFade} animate="show" initial="hidden">
