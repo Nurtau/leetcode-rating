@@ -1,10 +1,10 @@
 const transition = {
-  duration: 1,
+  duration: 0.6,
   ease: "easeOut",
 };
 
 const fadeTransition = {
-  duration: 0.45,
+  duration: 0.3,
   ease: "easeOut",
 };
 
