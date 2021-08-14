@@ -76,7 +76,7 @@ const StyledAddUser = styled.div`
   padding: 1.1rem;
   width: 100%;
   @media (max-width: 768px) {
-    margin: 1.3rem 2.5rem;
+    margin: 1.3rem 2rem;
   }
 `;
 
