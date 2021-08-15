@@ -8,15 +8,14 @@ const fadeTransition = {
   ease: "easeOut",
 };
 
-
 export const pageFade = {
   hidden: {
     opacity: 0,
-		x: -125,
+    x: -125,
   },
   show: {
     opacity: 1,
-		x: 0,
+    x: 0,
     transition: fadeTransition,
   },
   exit: {
@@ -35,9 +34,9 @@ export const ratingListFade = {
     opacity: 1,
     y: 0,
     transition: {
-			duration: 0.6,
-  		ease: "easeOut"
-		},
+      duration: 0.6,
+      ease: "easeOut",
+    },
   },
 };
 

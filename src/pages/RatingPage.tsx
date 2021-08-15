@@ -24,5 +24,5 @@ export const RatingPage: React.FC<RatingPageProps> = ({
 };
 
 const StyledRatingPage = styled(motion.div)`
-	flex-grow: 1;
+  flex-grow: 1;
 `;

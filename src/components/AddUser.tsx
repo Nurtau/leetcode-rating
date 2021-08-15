@@ -3,7 +3,12 @@ import axios from "axios";
 
 import { useDisappearingMessage } from "../hooks/useDisapearingMessage";
 import { Loading } from "./Loading";
-import { StyledInput, StyledButton, StyledMessage, InputContainer } from "../styles";
+import {
+  StyledInput,
+  StyledButton,
+  StyledMessage,
+  InputContainer,
+} from "../styles";
 
 export const AddUser = () => {
   const [nickname, setNickname] = useState<string>("");
@@ -12,7 +17,7 @@ export const AddUser = () => {
   const [message, setMessage] = useDisappearingMessage();
 
   const onButtonClick = async () => {
-		setMessage("");
+    setMessage("");
     if (nickname === "" || linkText === "") {
       setMessage("The fields must be filled");
       return;
@@ -68,5 +73,3 @@ export const AddUser = () => {
     </div>
   );
 };
-
-

@@ -45,16 +45,16 @@ export const App = () => {
 };
 
 const AppContainer = styled.div`
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledApp = styled.div`
   width: 100%;
   margin: auto;
   overflow: hidden;
-	flex-grow: 1;
-	display: flex;
+  flex-grow: 1;
+  display: flex;
 `;

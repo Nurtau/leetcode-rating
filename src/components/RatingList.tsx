@@ -54,7 +54,7 @@ export const RatingList: React.FC<RatingListProps> = ({
     <StyledList>
       {isLoading ? (
         <LoadingContainer>
-          <Loading height={80}/>
+          <Loading height={80} />
         </LoadingContainer>
       ) : (
         <motion.div variants={ratingListFade} animate="show" initial="hidden">
@@ -73,9 +73,9 @@ const LoadingContainer = styled.div`
 
 const StyledList = styled.div`
   padding: 1.2rem;
-	margin: auto;
+  margin: auto;
   overflow: hidden;
-	width: 75%;
+  width: 75%;
   @media (max-width: 1024px) {
     width: 85%;
   }

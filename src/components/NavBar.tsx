@@ -30,9 +30,8 @@ export const NavBar = () => {
 };
 const NavContainer = styled.div`
   width: 100%;
-	background-color: #29334183;
-	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-
+  background-color: #29334183;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 `;
 
 const StyledNav = styled.nav`
@@ -41,29 +40,27 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   width: 95%;
   margin: auto;
-	@media (max-width: 1024px) {
-		padding: 0.9rem 1.2rem;
-	}
-	@media (max-width: 768px) {
-		padding: 0.8rem 1.2rem;
-	}
-
+  @media (max-width: 1024px) {
+    padding: 0.9rem 1.2rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.2rem;
+  }
 `;
 
 const RightMenu = styled.div`
   display: flex;
   a {
     display: block;
-		margin: 0;
+    margin: 0;
     margin-bottom: 5px;
   }
 
-	& > div {
-		margin-left: 2.5rem;
+  & > div {
+    margin-left: 2.5rem;
 
-		@media (max-width: 768px) {
-			margin-left: 1.1rem;
-		}
-
-	}
+    @media (max-width: 768px) {
+      margin-left: 1.1rem;
+    }
+  }
 `;

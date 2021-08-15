@@ -19,18 +19,18 @@ export const Loading: React.FC<LoadingProps> = ({ height }) => {
 const StyledRing = styled.div<LoadingProps>`
   display: inline-block;
   position: relative;
-  width: ${props => `${props.height}px`};
-  height: ${props => `${props.height}px`};;
+  width: ${(props) => `${props.height}px`};
+  height: ${(props) => `${props.height}px`};
   animation-delay: -0.45s;
 
   div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: ${props => `${props.height / 2}px`};
-    height: ${props => `${props.height / 2}px`};
-    margin: ${props => `${props.height / 10}px`};
-    border: ${props => `${props.height / 20}px  solid #eeeeee`};
+    width: ${(props) => `${props.height / 2}px`};
+    height: ${(props) => `${props.height / 2}px`};
+    margin: ${(props) => `${props.height / 10}px`};
+    border: ${(props) => `${props.height / 20}px  solid #eeeeee`};
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #eeeeee transparent transparent transparent;
