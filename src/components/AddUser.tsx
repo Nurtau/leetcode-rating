@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
 
 import { useDisappearingMessage } from "../hooks/useDisapearingMessage";
 import { Loading } from "./Loading";
-import { StyledInput } from "../styles/StyledInput";
-import { StyledButton } from "../styles/StyledButton";
+import { StyledInput, StyledButton, StyledMessage, InputContainer } from "../styles";
 
 export const AddUser = () => {
   const [nickname, setNickname] = useState<string>("");
@@ -41,7 +39,7 @@ export const AddUser = () => {
   };
 
   return (
-    <StyledAddUser>
+    <div>
       <InputContainer>
         <label htmlFor="nickname">Nickname</label>
         <StyledInput
@@ -62,45 +60,13 @@ export const AddUser = () => {
         />
       </InputContainer>
       {isLoading ? (
-        <Loading height={50} />
+        <Loading height={55} />
       ) : (
         <StyledButton onClick={onButtonClick}>Add User</StyledButton>
       )}
       <StyledMessage>{message}</StyledMessage>
-    </StyledAddUser>
+    </div>
   );
 };
 
-const StyledAddUser = styled.div`
-  margin: 1.3rem 4rem;
-  padding: 1.1rem;
-  width: 100%;
-  @media (max-width: 768px) {
-    margin: 1.3rem 1.75rem;
-  }
-`;
 
-const InputContainer = styled.div`
-  margin-bottom: 1.2rem;
-  width: 80%;
-  display: flex;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-  label {
-    width: 30%;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
-`;
-
-const StyledMessage = styled.p`
-	font-size: 23px;
-	color: #eeeeeea5;
-	margin-top: 1rem;
-
-	@media (max-width: 768px) {
-		font-size: 15px;
-	}
-
-`;

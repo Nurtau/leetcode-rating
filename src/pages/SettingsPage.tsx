@@ -83,7 +83,9 @@ export const SettingsPage = () => {
           </UtilContainer>
         </UtilsContainer>
         <DescriptionContainer>
-          {utilsDescription[activeUtil]}
+					<ModifierContainer>
+          	{utilsDescription[activeUtil]}
+					</ModifierContainer>
         </DescriptionContainer>
       </SettingsContainer>
     </StyledSettingsPage>
@@ -100,6 +102,15 @@ const SettingsContainer = styled.div`
 const DescriptionContainer = styled.div`
   flex: 1;
 	height: 100%;
+`;
+
+const ModifierContainer = styled.div`
+	margin: 1.3rem 4rem;
+  padding: 1.1rem;
+  width: 100%;
+  @media (max-width: 768px) {
+    margin: 1.3rem 1.75rem;
+  }
 `;
 
 const UtilsContainer = styled.div`

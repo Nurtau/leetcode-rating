@@ -1,9 +1,20 @@
 import React from "react";
 
+import {
+  StyledButton,
+  StyledInput,
+  InputContainer,
+  StyledMessage,
+} from "../styles";
+
 export const ResetScores = () => {
   return (
     <div>
-      <h1>Reset Scores</h1>
+      <InputContainer>
+        <label htmlFor="password">Password</label>
+        <StyledInput type="text" id="password" />
+      </InputContainer>
+      <StyledButton>Reset scores</StyledButton>
     </div>
   );
 };
