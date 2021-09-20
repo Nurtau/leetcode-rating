@@ -13,7 +13,7 @@ export const NavLine: React.FC<NavLineProps> = ({ isActive }) => {
       variants={getNavLineAnimation(isActive)}
       animate="show"
       initial="hidden"
-    ></StyledNavLine>
+    />
   );
 };
 

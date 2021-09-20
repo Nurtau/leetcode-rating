@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import { useDisappearingMessage } from "../hooks/useDisapearingMessage";
 import { Loading } from "./Loading";
 import {
@@ -17,7 +16,6 @@ export const AddUser = () => {
   const [message, setMessage] = useDisappearingMessage();
 
   const onButtonClick = async () => {
-    setMessage("");
     if (nickname === "" || linkText === "") {
       setMessage("The fields must be filled");
       return;
@@ -31,13 +29,15 @@ export const AddUser = () => {
       setMessage("User was successfully added");
       setNickname("");
       setLinkText("https://leetcode.com/");
-    } catch (error) {
+    } catch (error: any) {
       const { data, status } = error.response;
-      if (status === 400) {
+      if (status === 400 || status === 406) {
         setMessage(data.message);
+      } else if (status === 500) {
+				setMessage("There is no such user");
       } else {
-        setMessage(error.message);
-      }
+				setMessage(error.message);
+			}
     } finally {
       setIsLoading(false);
     }

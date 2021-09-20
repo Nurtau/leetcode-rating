@@ -13,12 +13,15 @@ export const UpdateScores = () => {
     setMessage("");
     try {
       setIsLoading(true);
-      await axios.patch("https://leetcode-rating.herokuapp.com/update-scores");
-    } catch (error) {
+      const response = await axios.patch("https://leetcode-rating.herokuapp.com/update-scores");
+			if (response.status === 200) {
+				setMessage("Successfully updated");
+			}
+    } catch (error: any) {
       if (error.response) {
         setMessage(error.response.data.message);
       } else {
-        setMessage("Update may take up to 5 minutes");
+        setMessage(error.message);
       }
     } finally {
       setIsLoading(false);
@@ -27,7 +30,7 @@ export const UpdateScores = () => {
 
   return (
     <div>
-      <StyledCaution>One update in one hour is allowed</StyledCaution>
+      <StyledCaution>Now there is no limit</StyledCaution>
       {isLoading ? (
         <Loading height={55} />
       ) : (
@@ -41,11 +44,11 @@ export const UpdateScores = () => {
 const StyledCaution = styled.p`
   margin-bottom: 1.2rem;
   margin-right: 1rem;
-  font-size: 23px;
+  font-size: 28px;
   @media (max-width: 1024px) {
-    font-size: 20px;
+    font-size: 25;
   }
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 23px;
   }
 `;

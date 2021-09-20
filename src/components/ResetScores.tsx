@@ -19,7 +19,7 @@ export const ResetScores = () => {
     setMessage("");
     try {
       setIsLoading(true);
-      await axios.patch(
+      const response = await axios.patch(
         "https://leetcode-rating.herokuapp.com/reset-scores",
         {},
         {
@@ -28,7 +28,9 @@ export const ResetScores = () => {
           },
         }
       );
-      setMessage("Reset may take up to 5 minutes");
+			if (response.status === 200) {
+				setMessage("Sucessfully resetted");
+			}
     } catch (error) {
       setMessage("Wrong password");
     } finally {
