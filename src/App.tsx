@@ -11,11 +11,7 @@ import { NavBar } from "./components/NavBar";
 //styles
 import { GlobalStyle } from "./styles/GlobalStyle";
 
-//interfaces
-import { UserInfo } from "./components/RatingList";
-
 export const App = () => {
-  const [usersRating, setUsersRating] = useState<UserInfo[]>([]);
   const location = useLocation();
 
   return (
@@ -26,10 +22,7 @@ export const App = () => {
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route exact path="/">
-              <RatingPage
-                usersRating={usersRating}
-                setUsersRating={setUsersRating}
-              />
+              <RatingPage />
             </Route>
             <Route exact path="/settings">
               <SettingsPage />

@@ -7,18 +7,10 @@ import { UserInfo } from "../components/RatingList";
 
 import { pageFade } from "../animations";
 
-export interface RatingPageProps {
-  usersRating: UserInfo[];
-  setUsersRating: (users: UserInfo[]) => void;
-}
-
-export const RatingPage: React.FC<RatingPageProps> = ({
-  usersRating,
-  setUsersRating,
-}) => {
+export const RatingPage: React.FC = () => {
   return (
     <StyledRatingPage variants={pageFade} exit="exit">
-      <RatingList usersRating={usersRating} setUsersRating={setUsersRating} />
+      <RatingList />
     </StyledRatingPage>
   );
 };

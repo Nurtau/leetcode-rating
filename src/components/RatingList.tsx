@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Loading } from "./Loading";
 import { RatingUser } from "./RatingUser";
 import { ratingListFade } from "../animations";
-import { RatingPageProps } from "../pages/RatingPage";
+
 export interface UserInfo {
   username: string;
   score: number;
@@ -13,12 +13,8 @@ export interface UserInfo {
   link: string;
 }
 
-interface RatingListProps extends RatingPageProps {}
-
-export const RatingList: React.FC<RatingListProps> = ({
-  usersRating,
-  setUsersRating,
-}) => {
+export const RatingList: React.FC = () => {
+  const [usersRating, setUsersRating] = useState<UserInfo[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(usersRating.length === 0);
   useEffect(() => {
     const fetchData = async () => {
