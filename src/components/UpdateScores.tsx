@@ -20,7 +20,9 @@ export const UpdateScores = () => {
     } catch (error: any) {
       if (error.response) {
         setMessage(error.response.data.message);
-      } else {
+      } else if(error.status === 429) {
+				setMessage("Please try again")
+			} else {
         setMessage(error.message);
       }
     } finally {
